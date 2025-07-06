@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NList, NListItem } from 'naive-ui'
+import { NList, NListItem, NThing } from 'naive-ui'
 </script>
 <template>
   <n-thing>{{ $t('home.introduction') }}</n-thing>
