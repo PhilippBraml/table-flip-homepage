@@ -1,7 +1,7 @@
 {
   "name": "tableflip",
   "version": "0.0.0",
-  "homepage": "https://philippbraml.github.io/",
+  "homepage": "https://philippbraml.github.io/table-flip-homepage",
   "private": true,
   "type": "module",
   "scripts": {
