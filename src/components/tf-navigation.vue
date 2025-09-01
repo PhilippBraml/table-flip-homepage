@@ -6,6 +6,7 @@ import {
   HomeOutline as HomeIcon,
   InformationCircleOutline as InfoIcon,
   CalendarOutline as CalendarIcon,
+  AlarmOutline as AnnouncementIcon,
 } from '@vicons/ionicons5'
 import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
@@ -33,6 +34,29 @@ const menuOptions: MenuOption[] = [
       ),
     key: '/',
     icon: renderIcon(HomeIcon),
+  },
+  {
+    key: 'divider-1',
+    type: 'divider',
+    props: {
+      style: {
+        marginLeft: '32px',
+      },
+    },
+  },
+  {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {
+            name: '/announcements',
+          },
+        },
+        { default: () => t('navigation.announcements') },
+      ),
+    key: '/announcements',
+    icon: renderIcon(AnnouncementIcon),
   },
   {
     key: 'divider-1',
