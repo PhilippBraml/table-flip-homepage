@@ -20,15 +20,75 @@ import TfNavigation from './components/tf-navigation.vue'
     </n-layout>
   </n-config-provider>
 </template>
-<style scoped lang="css">
+<style scoped lang="css"></style>
+<style>
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  font-family: 'Lato', Arial, sans-serif;
+  background: #fff;
+  color: #111;
+}
+
+#app {
+  width: 100%;
+  min-height: 100vh;
+}
+
+header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2% 4%;
+  background: #111;
+  color: #fff;
+}
+
+img {
+  width: 12%;
+  height: auto;
+  max-width: 125px;
+}
+
 .tf-container {
-  height: 100vh;
-  width: 100vw;
-
-  padding: 2rem 0;
-
+  min-height: 100vh;
+  width: 100%;
+  padding: 2% 0;
   justify-content: center;
   align-content: center;
   display: flex;
+}
+
+.tf-max-width {
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+n-layout-content {
+  width: 100%;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    padding: 4% 2%;
+    text-align: center;
+  }
+  img {
+    width: 30%;
+    max-width: 90px;
+  }
+  .tf-max-width,
+  n-layout-content {
+    max-width: 100%;
+    padding: 0 2%;
+  }
 }
 </style>
