@@ -6,8 +6,8 @@ import { NList, NListItem, NThing } from 'naive-ui'
   <n-list>
     <n-list-item>One Piece</n-list-item>
     <n-list-item>Lorcana</n-list-item>
-    <n-list-item>Magic</n-list-item>
-    <n-list-item>YuGiOh</n-list-item>
+    <n-list-item>Magic - The Gathering</n-list-item>
+    <n-list-item>Yu-Gi-Oh</n-list-item>
     <n-list-item>DnD</n-list-item>
   </n-list>
 </template>
