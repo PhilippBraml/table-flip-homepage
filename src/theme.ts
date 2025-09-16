@@ -26,9 +26,9 @@ export const lightTheme: GlobalThemeOverrides = {
 
 export const darkTheme: GlobalThemeOverrides = {
   common: {
-    bodyColor: '#02022eff',
+    bodyColor: '#05057e56',
     primaryColor: '#ec9a29',
-    cardColor: '#02022eff',
+    cardColor: '#0808e756',
     textColor1: '#f2f4f3',
     textColor2: '#f2f4f3',
     textColor3: '#f2f4f3',
