@@ -6,6 +6,7 @@ import {
   HomeOutline as HomeIcon,
   InformationCircleOutline as InfoIcon,
   CalendarOutline as CalendarIcon,
+  ImageOutline as InstagramIcon,
 } from '@vicons/ionicons5'
 import { RouterLink } from 'vue-router'
 import { useI18n } from 'vue-i18n'
@@ -16,7 +17,20 @@ const router = useRouter()
 const selected = ref(router.currentRoute.value.name)
 
 function renderIcon(icon: Component) {
-  return () => h(NIcon, null, { default: () => h(icon) })
+  return () =>
+    h(
+      'span',
+      {
+        style: {
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          height: '100%',
+          width: '100%',
+        },
+      },
+      [h(NIcon, null, { default: () => h(icon) })],
+    )
 }
 
 const menuOptions: MenuOption[] = [
@@ -56,6 +70,29 @@ const menuOptions: MenuOption[] = [
       ),
     key: '/events',
     icon: renderIcon(CalendarIcon),
+  },
+  {
+    key: 'divider-1',
+    type: 'divider',
+    props: {
+      style: {
+        marginLeft: '32px',
+      },
+    },
+  },
+  {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {
+            name: '/instagram',
+          },
+        },
+        { default: () => t('navigation.instagram') },
+      ),
+    key: '/instagram',
+    icon: renderIcon(InstagramIcon),
   },
   {
     key: 'divider-1',

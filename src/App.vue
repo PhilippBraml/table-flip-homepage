@@ -21,6 +21,24 @@ import TfNavigation from './components/tf-navigation.vue'
   </n-config-provider>
 </template>
 <style scoped lang="css">
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2% 4%;
+  background: #02023b56;
+  color: #fff;
+}
+
+img {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 12%;
+  height: auto;
+  max-width: 125px;
+}
 .tf-container {
   height: 100vh;
   width: 100vw;
