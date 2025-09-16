@@ -1,6 +1,6 @@
 <script setup lang="ts">
 const calendarUrl =
-  'https://calendar.google.com/calendar/embed?src=sarah-diana.sporck%40gmx.de&ctz=Europe%2FBrussels'
+  'https://calendar.google.com/calendar/embed?src=tableflip.calendar%40gmail.com&ctz=Europe%2FBerlin'
 </script>
 <template>
   <div>
