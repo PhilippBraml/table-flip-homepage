@@ -8,13 +8,13 @@ import { darkTheme } from './theme'
 <template>
   <n-config-provider :theme-overrides="darkTheme">
     <n-layout class="tf-container">
-      <n-layout-header class="tf-max-width">
+      <n-layout-header class="tf-max-width" style="text-align: center">
         <header>
           <img alt="Vue logo" src="@/assets/tablefliplogo.jpg" width="125" height="125" />
           <tf-navigation />
         </header>
       </n-layout-header>
-      <n-layout-content style="width: 800px">
+      <n-layout-content>
         <RouterView />
       </n-layout-content>
     </n-layout>
