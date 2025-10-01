@@ -252,10 +252,6 @@
       </p>
     </div>
   </blockquote>
-  <div style="overflow: auto; position: absolute; height: 0pt; width: 0pt">
-    <a href="https://www.embedista.com/instagramfeed">Embed Instagram Post</a>
-    Code Generator
-  </div>
 </template>
 
 <script setup lang="ts">
