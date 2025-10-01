@@ -21,7 +21,7 @@ import { NList, NListItem, NThing } from 'naive-ui'
     </n-list-item>
     <n-list-item>
       <img
-        src="@/assets/magic_tcg.png"
+        src="@/assets/Magicthegathering-logo.svg"
         alt="Magic The Gathering"
         style="width: 100px; height: auto; display: block; margin: 0 auto"
       />
@@ -42,7 +42,7 @@ import { NList, NListItem, NThing } from 'naive-ui'
     </n-list-item>
     <n-list-item>
       <img
-        src="@/assets/dnd_transparent.png"
+        src="@/assets/DungeonsAndDragons_Logo.svg"
         alt="Dungeons and Dragons"
         style="width: 100px; height: auto; display: block; margin: 0 auto"
       />
