@@ -1,16 +1,15 @@
 <script setup lang="ts">
-import { type Component, h, ref } from 'vue'
-import type { MenuOption } from 'naive-ui'
-import { NIcon, NMenu, NSplit } from 'naive-ui'
 import {
+  AlarmOutline as AnnouncementIcon,
+  CalendarOutline as CalendarIcon,
   HomeOutline as HomeIcon,
   InformationCircleOutline as InfoIcon,
-  CalendarOutline as CalendarIcon,
-  AlarmOutline as AnnouncementIcon,
 } from '@vicons/ionicons5'
-import { RouterLink } from 'vue-router'
+import type { MenuOption } from 'naive-ui'
+import { NIcon, NMenu } from 'naive-ui'
+import { type Component, h, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { useRouter } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 
 const { t } = useI18n()
 const router = useRouter()
