@@ -1,8 +1,8 @@
 <script setup lang="ts">
+import { NConfigProvider, NLayout, NLayoutContent, NLayoutHeader } from 'naive-ui'
 import { RouterView } from 'vue-router'
-import { darkTheme, lightTheme } from './theme'
-import { NLayout, NLayoutHeader, NLayoutContent, NConfigProvider } from 'naive-ui'
 import TfNavigation from './components/tf-navigation.vue'
+import { darkTheme } from './theme'
 </script>
 
 <template>
@@ -20,6 +20,7 @@ import TfNavigation from './components/tf-navigation.vue'
     </n-layout>
   </n-config-provider>
 </template>
+
 <style scoped lang="css">
 .tf-container {
   height: 100vh;
