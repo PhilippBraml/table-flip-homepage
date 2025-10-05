@@ -21,20 +21,6 @@ function renderIcon(icon: Component) {
 }
 
 const menuOptions: MenuOption[] = [
-  /*{
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            name: '/',
-          },
-        },
-        { default: () => t('navigation.menu') },
-      ),
-    key: '/',
-    icon: renderIcon(MenuIcon),
-  },*/
   {
     label: () =>
       h(
