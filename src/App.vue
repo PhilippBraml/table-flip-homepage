@@ -8,9 +8,9 @@ import { darkTheme } from './theme'
 <template>
   <n-config-provider :theme-overrides="darkTheme">
     <n-layout class="tf-container">
-      <n-layout-header class="tf-max-width" style="text-align: center">
+      <n-layout-header class="tf-max-width" style="text-align: center; align-items: center">
         <header>
-          <img alt="Vue logo" src="@/assets/tablefliplogo.jpg" width="125" height="125" />
+          <img alt="Vue logo" src="@/assets/tablefliplogo.jpg" width="300" height="300" />
           <tf-navigation />
         </header>
       </n-layout-header>
@@ -29,8 +29,6 @@ body {
   width: 100%;
   min-height: 100%;
   font-family: 'Lato', Arial, sans-serif;
-  background: #fff;
-  color: #111;
 }
 
 #app {
@@ -41,17 +39,15 @@ body {
 header {
   width: 100%;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
   padding: 2% 4%;
-  background: #111;
-  color: #fff;
 }
 
 img {
-  width: 12%;
+  width: 25%;
   height: auto;
-  max-width: 125px;
+  max-width: 300px;
 }
 
 .tf-container {
