@@ -4,9 +4,10 @@ import {
   CalendarOutline as CalendarIcon,
   HomeOutline as HomeIcon,
   InformationCircleOutline as InfoIcon,
+  MenuOutline as MenuIcon,
 } from '@vicons/ionicons5'
 import type { MenuOption } from 'naive-ui'
-import { NIcon, NMenu } from 'naive-ui'
+import { NCollapse, NCollapseItem, NIcon, NMenu } from 'naive-ui'
 import { type Component, h, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { RouterLink, useRouter } from 'vue-router'
@@ -20,6 +21,20 @@ function renderIcon(icon: Component) {
 }
 
 const menuOptions: MenuOption[] = [
+  /*{
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {
+            name: '/',
+          },
+        },
+        { default: () => t('navigation.menu') },
+      ),
+    key: '/',
+    icon: renderIcon(MenuIcon),
+  },*/
   {
     label: () =>
       h(
@@ -105,8 +120,21 @@ const menuOptions: MenuOption[] = [
   },
 ]
 </script>
+
 <template>
-  <div>
-    <n-menu v-model:value="selected" :options="menuOptions" mode="horizontal" responsive />
-  </div>
+  <n-collapse style="max-width: 320px; width: 100%; margin: 0 auto; align-content: center">
+    <n-collapse-item>
+      <template #arrow><div /></template>
+
+      <template #header>
+        <n-icon style="align-self: center; width: 100%">
+          <MenuIcon />
+        </n-icon>
+      </template>
+
+      <n-collapse>
+        <n-menu v-model:value="selected" :options="menuOptions" mode="vertical" responsive />
+      </n-collapse>
+    </n-collapse-item>
+  </n-collapse>
 </template>
