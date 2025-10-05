@@ -1,16 +1,3 @@
-<!-- <script setup lang="ts">
-import InstagramFeed from 'vue3-instagram-feed'
-</script> -->
-
-<!-- <template>
-  <InstagramFeed
-    :count="6"
-    accessToken="IGAAPOZCYFZCuctBZAFJRY2ktSWdXTHQxS0N6bThqQnd5SXhQbVpzcXJnVU9qWFRwREVjdkR2VkJucnZAmQjI3eEZAtOHJtNlpqX0ZAudTZAWVTBsRXk2NGw0M0h0MWsxYnFIX3Q3T3RheENSOEFRWE1FTmR6U0VUSGZADYk9yd2RaWmVhNAZDZD"
-    :pagination="true"
-    :caption="true"
-  />
-</template> -->
-
 <template>
   <div
     style="
