@@ -1,0 +1,14 @@
+{
+  "general": [
+    {
+      "title": "Welcome to Table Flip!",
+      "content": "We are excited to launch our new homepage. Stay tuned for updates!",
+      "date": "2025-09-01"
+    },
+    {
+      "title": "Upcoming Event",
+      "content": "Don’t miss our next board game night on September 15th!",
+      "date": "2025-09-10"
+    }
+  ]
+}

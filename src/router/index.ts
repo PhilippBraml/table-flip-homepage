@@ -1,4 +1,4 @@
-import { createRouter, createWebHistory, type Router } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 import { routes, handleHotUpdate } from 'vue-router/auto-routes'
 
 const router = createRouter({
@@ -11,4 +11,3 @@ if (import.meta.hot) {
 }
 
 export default router
-

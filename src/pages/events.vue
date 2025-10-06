@@ -4,7 +4,9 @@ const calendarUrl =
 </script>
 <template>
   <div>
-    <h1>Kalender</h1>
+    <h1 style="text-align: center">
+      Kalender
+    </h1>
     <iframe
       :src="calendarUrl"
       style="border: 0"
@@ -12,6 +14,6 @@ const calendarUrl =
       height="600"
       frameborder="0"
       scrolling="no"
-    ></iframe>
+    />
   </div>
 </template>

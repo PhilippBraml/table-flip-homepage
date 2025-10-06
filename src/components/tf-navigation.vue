@@ -4,18 +4,25 @@ import {
   CalendarOutline as CalendarIcon,
   HomeOutline as HomeIcon,
   InformationCircleOutline as InfoIcon,
-  ImageOutline as InstagramIcon,
   MenuOutline as MenuIcon,
 } from '@vicons/ionicons5'
 import type { MenuOption } from 'naive-ui'
 import { NCollapse, NCollapseItem, NIcon, NMenu } from 'naive-ui'
-import { type Component, h, ref } from 'vue'
+import { type Component, h, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { RouterLink, useRouter } from 'vue-router'
+import { RouterLink, useRoute, useRouter } from 'vue-router'
 
 const { t } = useI18n()
 const router = useRouter()
-const selected = ref(router.currentRoute.value.name)
+const route = useRoute()
+const selected = ref(route.name)
+const expanded = ref<string[]>([])
+
+router.afterEach((to, from) => {
+  if (to.name !== from.name) expanded.value = []
+})
+
+watch(router.currentRoute, () => (selected.value = route.name))
 
 function renderIcon(icon: Component) {
   return () =>
@@ -110,29 +117,6 @@ const menuOptions: MenuOption[] = [
         RouterLink,
         {
           to: {
-            name: '/instagram',
-          },
-        },
-        { default: () => t('navigation.instagram') },
-      ),
-    key: '/instagram',
-    icon: renderIcon(InstagramIcon),
-  },
-  {
-    key: 'divider-1',
-    type: 'divider',
-    props: {
-      style: {
-        marginLeft: '32px',
-      },
-    },
-  },
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
             name: '/about',
           },
         },
@@ -145,18 +129,31 @@ const menuOptions: MenuOption[] = [
 </script>
 
 <template>
-  <n-collapse style="max-width: 320px; width: 100%; margin: 0 auto; align-content: center">
+  <n-collapse
+    v-model:expanded-names="expanded"
+    style="max-width: 320px; width: 100%; align-content: center"
+  >
     <n-collapse-item>
-      <template #arrow><div /></template>
+      <template #arrow>
+        <div style="width: 0" />
+      </template>
 
       <template #header>
-        <n-icon style="align-self: center; width: 100%">
+        <n-icon
+          style="align-self: center; width: 100%"
+          :size="30"
+        >
           <MenuIcon />
         </n-icon>
       </template>
 
       <n-collapse>
-        <n-menu v-model:value="selected" :options="menuOptions" mode="vertical" responsive />
+        <n-menu
+          v-model:value="selected"
+          :options="menuOptions"
+          mode="vertical"
+          responsive
+        />
       </n-collapse>
     </n-collapse-item>
   </n-collapse>

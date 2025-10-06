@@ -8,15 +8,17 @@
       width: 100%;
     "
   >
-    <h1 style="margin-bottom: 1rem">{{ $t('instagram.title') }}</h1>
+    <h1 style="margin-bottom: 1rem">
+      {{ $t('instagram.title') }}
+    </h1>
     <iframe
       src="https://www.instagram.com/tablefliptcg/embed"
-      width="400"
+      width="100%"
       height="440"
-      style="border: none; overflow: hidden"
+      style="border: none; overflow: hidden; max-width: 440px"
       scrolling="no"
       allowtransparency="true"
       allow="encrypted-media"
-    ></iframe>
+    />
   </div>
 </template>

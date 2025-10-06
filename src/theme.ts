@@ -1,42 +1,22 @@
-import { type GlobalThemeOverrides } from 'naive-ui'
+import { type GlobalTheme, darkTheme as NDarkTheme } from 'naive-ui'
 
-/**
-  --tf-c-white: #f2f4f3;
-  --tf-c-white-200: #d3d9d6;
-  --tf-c-white-400: #b0bfb8;
-
-  --tf-c-black: #03191e;
-  --tf-c-white-1900: #2e3833;
-  --tf-c-white-2100: #1c221f;
-  --tf-c-accent: #ec9a29;
-  --tf-c-secondary: #4c956c;
-  --tf-c-ternary: #553e4e;
- */
-
-export const lightTheme: GlobalThemeOverrides = {
-  common: {
-    bodyColor: '#f2f4f3',
-    baseColor: '#f2f4f3',
-    primaryColor: '#ec9a29',
-    textColorBase: '##03191e',
-    hoverColor: '#F0B056',
-    primaryColorHover: '#BC7410',
-  },
+const COLORS = {
+  DEFAULT_BG_BLUE: '#05057e',
+  DEFAULT_ACCENT_ORANGE: '#ec9a29',
+  DEFAULT_TEXT_COLOR: '#f2f4f3',
+  DEFAULT_HOVER_COLOR: '#b0bfb8',
 }
 
-export const darkTheme: GlobalThemeOverrides = {
+export const darkTheme: GlobalTheme = {
+  name: 'darktheme',
   common: {
-    bodyColor: '#05057e56',
-    primaryColor: '#ec9a29',
-    cardColor: '#0808e756',
-    textColor1: '#f2f4f3',
-    textColor2: '#f2f4f3',
-    textColor3: '#f2f4f3',
-    hoverColor: '#b0bfb8',
-    primaryColorHover: '#d3d9d6',
+    ...NDarkTheme.common,
+    baseColor: COLORS.DEFAULT_BG_BLUE,
+    primaryColor: COLORS.DEFAULT_ACCENT_ORANGE,
+    textColorBase: COLORS.DEFAULT_TEXT_COLOR,
     fontSize: '16px',
     fontFamily: 'Lato',
   },
 }
 
-export default lightTheme
+export default darkTheme
