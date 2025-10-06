@@ -1,40 +1,27 @@
 <template>
   <div class="announcements-page">
     <h1>Announcements</h1>
+
     <ul>
-      <li v-for="announcement in announcements" :key="announcement.id">
+      <n-el
+        v-for="(announcement, index) in announcements"
+        :key="index"
+        tag="li"
+      >
         <h2>{{ announcement.title }}</h2>
         <p>{{ announcement.content }}</p>
         <small>{{ announcement.date }}</small>
-      </li>
+      </n-el>
     </ul>
   </div>
 </template>
 
 <script lang="ts" setup>
+import { NEl } from 'naive-ui'
 import { ref } from 'vue'
+import Announcements from '@/assets/announcements.json' with { type: 'json' }
 
-interface Announcement {
-  id: number
-  title: string
-  content: string
-  date: string
-}
-
-const announcements = ref<Announcement[]>([
-  {
-    id: 1,
-    title: 'Welcome to Table Flip!',
-    content: 'We are excited to launch our new homepage. Stay tuned for updates!',
-    date: '2025-09-01',
-  },
-  {
-    id: 2,
-    title: 'Upcoming Event',
-    content: 'Don’t miss our next board game night on September 15th!',
-    date: '2025-09-10',
-  },
-])
+const announcements = ref<typeof Announcements.general>(Announcements.general)
 </script>
 
 <style scoped>
@@ -53,7 +40,7 @@ ul {
   padding: 0;
 }
 li {
-  background: #f9f9f9;
+  background-color: var(--card-color);
   border-radius: 8px;
   margin-bottom: 1rem;
   padding: 1rem;

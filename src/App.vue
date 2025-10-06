@@ -6,21 +6,30 @@ import { darkTheme } from './theme'
 </script>
 
 <template>
-  <n-config-provider :theme-overrides="darkTheme">
-    <n-layout class="tf-container">
-      <n-layout-header class="tf-max-width" style="text-align: center; align-items: center">
-        <header>
-          <img alt="Vue logo" src="@/assets/tablefliplogo.jpg" width="300" height="300" />
+  <n-config-provider
+    :theme="darkTheme"
+    style="height: 100%"
+  >
+    <n-layout style="height: 100%">
+      <n-layout-header class="tf-align-header-center">
+        <header class="tf-max-content-width">
+          <img
+            alt="Table Flip Logo"
+            src="@/assets/tablefliplogo.png"
+            width="200"
+            height="200"
+          />
           <tf-navigation />
         </header>
       </n-layout-header>
-      <n-layout-content>
-        <RouterView />
+      <n-layout-content class="tf-use-full-width">
+        <div class="tf-max-content-width">
+          <RouterView />
+        </div>
       </n-layout-content>
     </n-layout>
   </n-config-provider>
 </template>
-<style scoped lang="css"></style>
 <style>
 html,
 body {
@@ -35,56 +44,30 @@ body {
   width: 100%;
   min-height: 100vh;
 }
+</style>
+<style scoped lang="css">
+.tf-align-header-center {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.tf-use-full-width {
+  width: 100%;
+  justify-content: center;
+}
+
+.tf-max-content-width {
+  padding: 0 10px;
+  align-self: center;
+  display: flex;
+  flex-direction: column;
+}
 
 header {
-  width: 100%;
+  align-self: center;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 2% 4%;
-}
-
-img {
-  width: 25%;
-  height: auto;
-  max-width: 300px;
-}
-
-.tf-container {
-  min-height: 100vh;
-  width: 100%;
-  padding: 2% 0;
-  justify-content: center;
-  align-content: center;
-  display: flex;
-}
-
-.tf-max-width {
-  width: 100%;
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-n-layout-content {
-  width: 100%;
-  max-width: 90%;
-  margin: 0 auto;
-}
-
-@media (max-width: 600px) {
-  header {
-    flex-direction: column;
-    padding: 4% 2%;
-    text-align: center;
-  }
-  img {
-    width: 30%;
-    max-width: 90px;
-  }
-  .tf-max-width,
-  n-layout-content {
-    max-width: 100%;
-    padding: 0 2%;
-  }
 }
 </style>

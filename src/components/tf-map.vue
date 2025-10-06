@@ -9,13 +9,18 @@ const center = ref(tableflip)
 </script>
 <template>
   <div style="height: 300px; width: 400px">
-    <l-map ref="map" v-model:zoom="zoom" v-model:center="center" :useGlobalLeaflet="false">
+    <l-map
+      ref="map"
+      v-model:zoom="zoom"
+      v-model:center="center"
+      :use-global-leaflet="false"
+    >
       <l-tile-layer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         layer-type="base"
         name="Stadia Maps Basemap"
-      ></l-tile-layer>
-      <l-marker :lat-lng="tableflip"></l-marker>
+      />
+      <l-marker :lat-lng="tableflip" />
     </l-map>
   </div>
 </template>
