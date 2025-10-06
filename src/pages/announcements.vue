@@ -1,6 +1,9 @@
 <template>
+  <tf-instagram />
   <div class="announcements-page">
-    <h1>Announcements</h1>
+    <h1 style="align-self: center">
+      Announcements
+    </h1>
 
     <ul>
       <n-el
@@ -20,12 +23,15 @@
 import { NEl } from 'naive-ui'
 import { ref } from 'vue'
 import Announcements from '@/assets/announcements.json' with { type: 'json' }
+import tfInstagram from '@/components/tf-instagram.vue'
 
 const announcements = ref<typeof Announcements.general>(Announcements.general)
 </script>
 
 <style scoped>
 .announcements-page {
+  display: flex;
+  flex-direction: column;
   max-width: 700px;
   margin: 2rem auto;
   padding: 1rem;

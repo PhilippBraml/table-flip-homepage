@@ -18,7 +18,7 @@ import { darkTheme } from './theme'
             src="@/assets/tablefliplogo.png"
             width="200"
             height="200"
-          />
+          >
           <tf-navigation />
         </header>
       </n-layout-header>
