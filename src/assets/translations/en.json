@@ -1,0 +1,31 @@
+{
+  "title": "Welcome to TableFlip",
+  "navigation": {
+    "home": "Homepage",
+    "events": "Events",
+    "about": "About us",
+    "announcements": "Announcements",
+    "instagram": "Instagram"
+  },
+  "home": {
+    "introduction": "Wir sind ein freundlicher Card Shop in Augsburg! Komm doch mal vorbei."
+  },
+  "about": {
+    "openingHours": "Opening Hours",
+    "address": "Adress",
+    "whatsApp": "WhatsApp",
+    "closed": "Closed",
+    "weekdays": {
+      "monday": "Monday",
+      "tuesday": "Tuesday",
+      "wednesday": "Wednesday",
+      "thursday": "Thursday",
+      "friday": "Friday",
+      "saturday": "Saturday",
+      "sunday": "Sunday & Holidays"
+    }
+  },
+  "instagram": {
+    "title": "Our News"
+  }
+}

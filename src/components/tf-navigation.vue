@@ -4,6 +4,7 @@ import {
   CalendarOutline as CalendarIcon,
   HomeOutline as HomeIcon,
   InformationCircleOutline as InfoIcon,
+  StorefrontOutline as MarketIcon,
   MenuOutline as MenuIcon,
 } from '@vicons/ionicons5'
 import type { MenuOption } from 'naive-ui'
@@ -110,6 +111,20 @@ const menuOptions: MenuOption[] = [
         marginLeft: '32px',
       },
     },
+  },
+  {
+    label: () =>
+      h(
+        RouterLink,
+        {
+          to: {
+            name: '/store',
+          },
+        },
+        { default: () => t('navigation.store') },
+      ),
+    key: '/store',
+    icon: renderIcon(MarketIcon),
   },
   {
     label: () =>
