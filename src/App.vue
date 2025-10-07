@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { NConfigProvider, NLayout, NLayoutContent, NLayoutHeader } from 'naive-ui'
-import { RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router'
 import TfNavigation from './components/tf-navigation.vue'
 import { darkTheme } from './theme'
 </script>
@@ -13,12 +13,14 @@ import { darkTheme } from './theme'
     <n-layout style="height: 100%">
       <n-layout-header class="tf-align-header-center">
         <header class="tf-max-content-width">
-          <img
-            alt="Table Flip Logo"
-            src="@/assets/tablefliplogo.png"
-            width="200"
-            height="200"
-          >
+          <RouterLink :to="{ name: '/' }">
+            <img
+              alt="Table Flip Logo"
+              src="@/assets/tablefliplogo.png"
+              width="200"
+              height="200"
+            />
+          </RouterLink>
           <tf-navigation />
         </header>
       </n-layout-header>

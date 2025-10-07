@@ -4,13 +4,14 @@
     "home": "Startseite",
     "events": "Events",
     "about": "Über uns",
+    "store": "Shop",
     "announcements": "Ankündigungen",
     "instagram": "Instagram"
   },
   "home": {
-    "introduction": "Wir sind ein freundlicher Card Shop in Augsburg! Komm doch mal vorbei."
+    "introduction": "Hallo und herzlich Willkommen bei TableFlip!\nDein Fachgeschäft für Sammelkarten jeglicher Art und Anime Merchandise. \n Bitte wähle dein TCG aus um mehr zu unserem Angebot zu erfahren."
   },
-  "about": {
+  "store": {
     "openingHours": "Öffnungszeiten",
     "address": "Adresse",
     "whatsApp": "WhatsApp",
@@ -22,10 +23,27 @@
       "thursday": "Donnerstag",
       "friday": "Freitag",
       "saturday": "Samstag",
-      "sunday": "Sonntag"
+      "sunday": "Sonn- & Feiertage"
     }
+  },
+  "about": {
+    "title": "Über uns",
+    "default": "TableFlip ist dein Fachgeschäft für Sammelkarten jeglicher Art und Anime Merchandise. Wir bieten dir eine große Auswahl an Produkten, darunter:\n- Pokémon Karten\n- Yu-Gi-Oh! Karten\n- Magic: The Gathering Karten\n- Digimon Karten\n- Dungeons & Dragons Zubehör\n- Star Wars Karten\n- Anime Figuren und Merchandise\n\nUnser Team besteht aus leidenschaftlichen Sammlern und Experten, die dir gerne bei der Auswahl der richtigen Produkte helfen. Egal, ob du ein erfahrener Sammler bist oder gerade erst anfängst, wir haben für jeden etwas dabei.",
+    "invitation": "Neben unserem umfangreichen Sortiment bieten wir auch regelmäßig Events und Turniere an, bei denen du dein Können unter Beweis stellen und neue Leute kennenlernen kannst. Schau doch mal auf unserer Event-Seite vorbei, um mehr zu erfahren.\n\nWir freuen uns darauf, dich in unserem Laden begrüßen zu dürfen und dir bei deinem Sammelabenteuer zu helfen!",
+    "team": "Unser Team"
   },
   "instagram": {
     "title": "Our News"
+  },
+  "events": {
+    "title": "Events",
+    "upcomingEvents": "Kommende Events",
+    "noUpcomingEvents": "Derzeit sind keine Events geplant. Schau bald wieder vorbei!",
+    "pastEvents": "Vergangene Events",
+    "noPastEvents": "Es wurden noch keine Events veranstaltet. Schau bald wieder vorbei!",
+    "participants": "Teilnehmer",
+    "maxParticipants": "Maximale Teilnehmerzahl: {maxParticipantCount}",
+    "eventDate": "Event Datum: {eventDate}",
+    "postDate": "Veröffentlicht am: {postDate}"
   }
 }

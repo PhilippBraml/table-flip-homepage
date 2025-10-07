@@ -1,9 +1,7 @@
 <template>
   <tf-instagram />
   <div class="announcements-page">
-    <h1 style="align-self: center">
-      Announcements
-    </h1>
+    <h1 style="align-self: center">Announcements</h1>
 
     <ul>
       <n-el
@@ -12,20 +10,31 @@
         tag="li"
       >
         <h2>{{ announcement.title }}</h2>
+        <p>{{ $t('events.eventDate', { eventDate: announcement.eventDate }) }}</p>
+        <p v-if="announcement.maxParticipants">
+          {{ $t('events.maxParticipants', { maxParticipantsCount: announcement.maxParticipants }) }}
+        </p>
         <p>{{ announcement.content }}</p>
-        <small>{{ announcement.date }}</small>
+        <small>{{ $t('events.postDate', { postDate: announcement.postDate }) }}</small>
       </n-el>
     </ul>
   </div>
 </template>
 
 <script lang="ts" setup>
-import { NEl } from 'naive-ui'
-import { ref } from 'vue'
 import Announcements from '@/assets/announcements.json' with { type: 'json' }
 import tfInstagram from '@/components/tf-instagram.vue'
+import { NEl } from 'naive-ui'
+import { ref } from 'vue'
 
-const announcements = ref<typeof Announcements.general>(Announcements.general)
+type Announcement = {
+  title: string
+  content: string
+  eventDate: string
+  postDate: string
+  maxParticipants?: number
+}
+const announcements = ref<Announcement[]>(Announcements.general)
 </script>
 
 <style scoped>
