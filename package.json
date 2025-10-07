@@ -5,7 +5,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "deploy": "npm run clear-gh-pages-cache && gh-pages -d dist -b gh_tableflip -r https://github.com/PhilippBraml/table-flip-homepage.git",
+    "deploy": "npm run clear-gh-pages-cache && gh-pages -d dist -b gh_tableflip --cname table-flip.de -r https://github.com/PhilippBraml/table-flip-homepage.git",
     "clear-gh-pages-cache": "rimraf node_modules/.cache/gh-pages",
     "start": "vite",
     "build": "npm run type-check & npm run build-only --",
