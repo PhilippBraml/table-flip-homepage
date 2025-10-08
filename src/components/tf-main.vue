@@ -1,108 +1,58 @@
 <script setup lang="ts">
-import { NList, NListItem, NThing } from 'naive-ui'
+import { NList, NListItem, NThing, NImage } from 'naive-ui'
+function getImageSrc(imageName: string) {
+  return new URL(`../assets/tcg/${imageName}`, import.meta.url).href
+}
+
+const items: { tcg?: string; src: string; alt: string }[] = [
+  { tcg: 'onepiece', src: 'onepiece_tcg.webp', alt: 'One Piece' },
+  {
+    tcg: 'pokemon',
+    src: 'Pokémon_Trading_Card_Game_logo.svg',
+    alt: 'Pokemon Trading Card Game',
+  },
+  { tcg: 'gundam', src: 'gundam.webp', alt: 'Gundam' },
+  { tcg: 'lorcana', src: 'lorcana_tcg.webp', alt: 'Lorcana' },
+  { tcg: 'riftbound', src: 'riftbound_logo.png', alt: 'Riftbound' },
+  { tcg: 'mtg', src: 'Magicthegathering_logo.svg', alt: 'Magic The Gathering' },
+  { src: 'Flesh_and_Blood_Logo.webp', alt: 'Flesh and Blood' },
+  { tcg: 'ygo', src: 'yugioh_tcg.png', alt: 'Yu-Gi-Oh!' },
+  { tcg: 'digimon', src: 'digimon_tcg.png', alt: 'Digimon' },
+  { tcg: 'starwars', src: 'Star_Wars_Logo.webp', alt: 'StarWars Unlimited' },
+  { src: 'DungeonsAndDragons_Logo.svg', alt: 'Dungeons and Dragons' },
+]
 </script>
 
 <template>
-  <n-thing style="align-self: center; max-width: 400px; white-space: preserve; text-align: center">
+  <n-thing
+    style="
+      align-self: center;
+      max-width: 400px;
+      white-space: preserve;
+      text-align: center;
+      padding: 10px 0;
+    "
+  >
     {{ $t('home.introduction') }}
   </n-thing>
-  <n-list>
-    <n-list-item>
-      <RouterLink :to="{ name: '/events', query: { tcg: 'onepiece' } }">
-        <img
-          src="@/assets/onepiece_tcg.webp"
-          alt="One Piece"
-          style="width: 100px; height: auto; display: block; margin: 0 auto"
-        />
-      </RouterLink>
-    </n-list-item>
-    <n-list-item>
-      <RouterLink :to="{ name: '/events', query: { tcg: 'pokemon' } }">
-        <img
-          src="@/assets/Pokémon_Trading_Card_Game_logo.svg"
-          alt="Pokemon Trading Card Game"
-          style="width: 100px; height: auto; display: block; margin: 0 auto"
-        />
-      </RouterLink>
-    </n-list-item>
-    <n-list-item>
-      <RouterLink :to="{ name: '/events', query: { tcg: 'gundam' } }">
-        <img
-          src="@/assets/gundam.webp"
-          alt="Gundam"
-          style="width: 100px; height: auto; display: block; margin: 0 auto"
-        />
-      </RouterLink>
-    </n-list-item>
-    <n-list-item>
-      <RouterLink :to="{ name: '/events', query: { tcg: 'lorcana' } }">
-        <img
-          src="@/assets/lorcana_tcg.webp"
-          alt="Lorcana"
-          style="width: 100px; height: auto; display: block; margin: 0 auto"
-        />
-      </RouterLink>
-    </n-list-item>
-    <n-list-item>
-      <RouterLink :to="{ name: '/events', query: { tcg: 'riftbound' } }">
-        <img
-          src="@/assets/riftbound_logo.png"
-          alt="Riftbound"
-          style="width: 100px; height: auto; display: block; margin: 0 auto"
-        />
-      </RouterLink>
-    </n-list-item>
-    <n-list-item>
-      <RouterLink :to="{ name: '/events', query: { tcg: 'mtg' } }">
-        <img
-          src="@/assets/Magicthegathering_logo.svg"
-          alt="Magic The Gathering"
-          style="width: 100px; height: auto; display: block; margin: 0 auto"
-        />
-      </RouterLink>
-    </n-list-item>
-    <n-list-item>
-      <RouterLink :to="{ name: '/events' }">
-        <img
-          src="@/assets/Flesh_and_Blood_logo.webp"
-          alt="Flesh and Blood"
-          style="width: 100px; height: auto; display: block; margin: 0 auto"
-        />
-      </RouterLink>
-    </n-list-item>
-    <n-list-item>
-      <RouterLink :to="{ name: '/events', query: { tcg: 'ygo' } }">
-        <img
-          src="@/assets/yugioh_tcg.png"
-          alt="Yu-Gi-Oh!"
-          style="width: 100px; height: auto; display: block; margin: 0 auto"
-        />
-      </RouterLink>
-    </n-list-item>
-    <n-list-item>
-      <RouterLink :to="{ name: '/events', query: { tcg: 'digimon' } }">
-        <img
-          src="@/assets/digimon_tcg.png"
-          alt="Digimon"
-          style="width: 100px; height: auto; display: block; margin: 0 auto"
-        />
-      </RouterLink>
-    </n-list-item>
-    <n-list-item>
-      <RouterLink :to="{ name: '/events', query: { tcg: 'starwars' } }">
-        <img
-          src="@/assets/Star_Wars_Logo.webp"
-          alt="Digimon"
-          style="width: 100px; height: auto; display: block; margin: 0 auto"
-        />
-      </RouterLink>
-    </n-list-item>
-    <n-list-item>
-      <RouterLink :to="{ name: '/events' }">
-        <img
-          src="@/assets/DungeonsAndDragons_Logo.svg"
-          alt="Dungeons and Dragons"
-          style="width: 100px; height: auto; display: block; margin: 0 auto"
+  <n-list
+    style="max-width: 500px; width: 500px; align-self: center"
+    hoverable
+  >
+    <n-list-item
+      v-for="(item, index) in items"
+      :key="index"
+      style="justify-content: center; width: 100%; padding: 0"
+    >
+      <RouterLink
+        :to="{ name: '/events', query: { tcg: item.tcg } }"
+        style="width: 100%; height: 100%; display: flex; justify-content: center"
+      >
+        <NImage
+          :src="getImageSrc(item.src)"
+          :alt="item.alt"
+          width="100px"
+          style="padding: 10px 0"
         />
       </RouterLink>
     </n-list-item>

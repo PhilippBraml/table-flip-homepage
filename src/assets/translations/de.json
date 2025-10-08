@@ -1,12 +1,17 @@
 {
+  "defaultTabTitle": "TableFlip",
   "title": "Willkommen bei TableFlip",
   "navigation": {
     "home": "Startseite",
     "events": "Events",
-    "about": "Über uns",
-    "store": "Shop",
+    "about": "Öffnungszeiten",
+    "store": "Über uns",
     "announcements": "Ankündigungen",
-    "instagram": "Instagram"
+    "imprint": "Impressum"
+  },
+  "imprint": {
+    "title": "Impressum",
+    "address": "Anschrift"
   },
   "home": {
     "introduction": "Hallo und herzlich Willkommen bei TableFlip!\nDein Fachgeschäft für Sammelkarten jeglicher Art und Anime Merchandise. \n Bitte wähle dein TCG aus um mehr zu unserem Angebot zu erfahren."
@@ -33,15 +38,10 @@
     "team": "Unser Team"
   },
   "instagram": {
-    "title": "Our News"
+    "title": "Unsere letzten Instagram Posts"
   },
   "events": {
-    "title": "Events",
-    "upcomingEvents": "Kommende Events",
-    "noUpcomingEvents": "Derzeit sind keine Events geplant. Schau bald wieder vorbei!",
-    "pastEvents": "Vergangene Events",
-    "noPastEvents": "Es wurden noch keine Events veranstaltet. Schau bald wieder vorbei!",
-    "participants": "Teilnehmer",
+    "title": "Ankündigungen",
     "maxParticipants": "Maximale Teilnehmerzahl: {maxParticipantCount}",
     "eventDate": "Event Datum: {eventDate}",
     "postDate": "Veröffentlicht am: {postDate}"

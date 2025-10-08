@@ -4,7 +4,6 @@ const COLORS = {
   DEFAULT_BG_BLUE: '#05057e',
   DEFAULT_ACCENT_ORANGE: '#ec9a29',
   DEFAULT_TEXT_COLOR: '#f2f4f3',
-  DEFAULT_HOVER_COLOR: '#b0bfb8',
 }
 
 export const darkTheme: GlobalTheme = {

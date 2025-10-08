@@ -1,7 +1,7 @@
 {
   "name": "tableflip",
   "version": "0.0.0",
-  "homepage": "https://philippbraml.github.io/table-flip-homepage",
+  "homepage": "https://table-flip.de",
   "private": true,
   "type": "module",
   "scripts": {
@@ -41,6 +41,7 @@
     "eslint": "^9.22.0",
     "eslint-plugin-vue": "~10.0.0",
     "gh-pages": "^6.3.0",
+    "jiti": "2.6.1",
     "jsdom": "^26.0.0",
     "prettier": "3.6.2",
     "rimraf": "6.0.1",

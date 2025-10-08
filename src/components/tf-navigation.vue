@@ -6,24 +6,45 @@ import {
   InformationCircleOutline as InfoIcon,
   StorefrontOutline as MarketIcon,
   MenuOutline as MenuIcon,
+  NewspaperOutline as NewspaperIcon,
 } from '@vicons/ionicons5'
+import { useTitle } from '@vueuse/core'
 import type { MenuOption } from 'naive-ui'
-import { NCollapse, NCollapseItem, NIcon, NMenu } from 'naive-ui'
+import type de from '@/assets/translations/de.json'
+import { NCollapse, NCollapseTransition, NIcon, NMenu } from 'naive-ui'
 import { type Component, h, ref, watch } from 'vue'
 import { useI18n } from 'vue-i18n'
-import { RouterLink, useRoute, useRouter } from 'vue-router'
+import { RouterLink, useRoute, useRouter, type RouteRecordName } from 'vue-router'
 
-const { t } = useI18n()
+const { t } = useI18n<{ message: typeof de }>()
 const router = useRouter()
 const route = useRoute()
 const selected = ref(route.name)
-const expanded = ref<string[]>([])
+const expanded = ref<boolean>(false)
+const title = useTitle()
+
+const navItems: { route: RouteRecordName; text: string; icon: Component }[] = [
+  { route: '/', text: t('navigation.home'), icon: HomeIcon },
+  { route: '/events', text: t('navigation.announcements'), icon: AnnouncementIcon },
+  { route: '/calendar', text: t('navigation.events'), icon: CalendarIcon },
+  { route: '/about', text: t('navigation.store'), icon: MarketIcon },
+  { route: '/opening-hours', text: t('navigation.about'), icon: InfoIcon },
+  { route: '/imprint', text: t('navigation.imprint'), icon: NewspaperIcon },
+]
 
 router.afterEach((to, from) => {
-  if (to.name !== from.name) expanded.value = []
+  if (to.name !== from.name) expanded.value = false
 })
 
-watch(router.currentRoute, () => (selected.value = route.name))
+watch(
+  router.currentRoute,
+  () => {
+    selected.value = route.name
+    const navItem = navItems.find((navItem) => navItem.route === selected.value)
+    title.value = navItem?.text ? `${navItem.text} - ${t('defaultTabTitle')}` : t('defaultTabTitle')
+  },
+  { immediate: true },
+)
 
 function renderIcon(icon: Component) {
   return () =>
@@ -41,127 +62,52 @@ function renderIcon(icon: Component) {
       [h(NIcon, null, { default: () => h(icon) })],
     )
 }
-
-const menuOptions: MenuOption[] = [
+const menuOptions: MenuOption[] = navItems.flatMap((item, index) => [
+  ...(index !== 0
+    ? [
+        {
+          key: 'divider-1',
+          type: 'divider',
+          props: {
+            style: {
+              marginLeft: '32px',
+            },
+          },
+        },
+      ]
+    : []),
   {
     label: () =>
       h(
         RouterLink,
         {
           to: {
-            name: '/',
+            name: item.route,
           },
         },
-        { default: () => t('navigation.home') },
+        { default: () => item.text },
       ),
-    key: '/',
-    icon: renderIcon(HomeIcon),
+    key: item.route,
+    icon: renderIcon(item.icon),
   },
-  {
-    key: 'divider-1',
-    type: 'divider',
-    props: {
-      style: {
-        marginLeft: '32px',
-      },
-    },
-  },
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            name: '/announcements',
-          },
-        },
-        { default: () => t('navigation.announcements') },
-      ),
-    key: '/announcements',
-    icon: renderIcon(AnnouncementIcon),
-  },
-  {
-    key: 'divider-1',
-    type: 'divider',
-    props: {
-      style: {
-        marginLeft: '32px',
-      },
-    },
-  },
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            name: '/events',
-          },
-        },
-        { default: () => t('navigation.events') },
-      ),
-    key: '/events',
-    icon: renderIcon(CalendarIcon),
-  },
-  {
-    key: 'divider-1',
-    type: 'divider',
-    props: {
-      style: {
-        marginLeft: '32px',
-      },
-    },
-  },
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            name: '/store',
-          },
-        },
-        { default: () => t('navigation.store') },
-      ),
-    key: '/store',
-    icon: renderIcon(MarketIcon),
-  },
-  {
-    label: () =>
-      h(
-        RouterLink,
-        {
-          to: {
-            name: '/about',
-          },
-        },
-        { default: () => t('navigation.about') },
-      ),
-    key: '/about',
-    icon: renderIcon(InfoIcon),
-  },
-]
+])
 </script>
 
 <template>
-  <n-collapse
-    v-model:expanded-names="expanded"
-    style="max-width: 320px; width: 100%; align-content: center"
-  >
-    <n-collapse-item>
-      <template #arrow>
-        <div style="width: 0" />
-      </template>
+  <div @mouseleave="expanded = false">
+    <div
+      @mouseover="expanded = true"
+      @touchend="expanded = !expanded"
+    >
+      <n-icon
+        style="align-self: center; width: 100%"
+        :size="30"
+      >
+        <MenuIcon />
+      </n-icon>
+    </div>
 
-      <template #header>
-        <n-icon
-          style="align-self: center; width: 100%"
-          :size="30"
-        >
-          <MenuIcon />
-        </n-icon>
-      </template>
-
+    <n-collapse-transition :show="expanded">
       <n-collapse>
         <n-menu
           v-model:value="selected"
@@ -170,6 +116,6 @@ const menuOptions: MenuOption[] = [
           responsive
         />
       </n-collapse>
-    </n-collapse-item>
-  </n-collapse>
+    </n-collapse-transition>
+  </div>
 </template>
