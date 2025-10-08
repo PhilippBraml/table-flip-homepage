@@ -4,8 +4,8 @@
   "navigation": {
     "home": "Startseite",
     "events": "Events",
-    "about": "Öffnungszeiten",
-    "store": "Über uns",
+    "about": "Über uns",
+    "store": "Shop",
     "announcements": "Ankündigungen",
     "imprint": "Impressum"
   },
@@ -40,7 +40,7 @@
   "instagram": {
     "title": "Unsere letzten Instagram Posts"
   },
-  "events": {
+  "announcments": {
     "title": "Ankündigungen",
     "maxParticipants": "Maximale Teilnehmerzahl: {maxParticipantCount}",
     "eventDate": "Event Datum: {eventDate}",

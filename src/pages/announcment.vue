@@ -4,7 +4,7 @@
   <!-- Ankündigungen -->
   <div class="announcements-page">
     <h1 style="align-self: center">
-      {{ $t('events.title') }}
+      {{ $t('announcments.title') }}
     </h1>
 
     <ul>
@@ -14,12 +14,16 @@
         tag="li"
       >
         <h2>{{ announcement.title }}</h2>
-        <p>{{ $t('events.eventDate', { eventDate: announcement.eventDate }) }}</p>
+        <p>{{ $t('announcments.eventDate', { eventDate: announcement.eventDate }) }}</p>
         <p v-if="announcement.maxParticipants">
-          {{ $t('events.maxParticipants', { maxParticipantsCount: announcement.maxParticipants }) }}
+          {{
+            $t('announcments.maxParticipants', {
+              maxParticipantsCount: announcement.maxParticipants,
+            })
+          }}
         </p>
         <p>{{ announcement.content }}</p>
-        <small>{{ $t('events.postDate', { postDate: announcement.postDate }) }}</small>
+        <small>{{ $t('announcments.postDate', { postDate: announcement.postDate }) }}</small>
       </n-el>
     </ul>
   </div>
