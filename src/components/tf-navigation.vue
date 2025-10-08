@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import type de from '@/assets/translations/de.json'
 import {
   AlarmOutline as AnnouncementIcon,
   CalendarOutline as CalendarIcon,
@@ -10,9 +11,8 @@ import {
 } from '@vicons/ionicons5'
 import { useTitle } from '@vueuse/core'
 import type { MenuOption } from 'naive-ui'
-import type de from '@/assets/translations/de.json'
 import { NCollapse, NCollapseTransition, NIcon, NMenu } from 'naive-ui'
-import { type Component, h, ref, watch } from 'vue'
+import { h, ref, watch, type Component } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { RouterLink, useRoute, useRouter, type RouteRecordName } from 'vue-router'
 
@@ -25,10 +25,10 @@ const title = useTitle()
 
 const navItems: { route: RouteRecordName; text: string; icon: Component }[] = [
   { route: '/', text: t('navigation.home'), icon: HomeIcon },
-  { route: '/events', text: t('navigation.announcements'), icon: AnnouncementIcon },
+  { route: '/announcment', text: t('navigation.announcements'), icon: AnnouncementIcon },
   { route: '/calendar', text: t('navigation.events'), icon: CalendarIcon },
-  { route: '/about', text: t('navigation.store'), icon: MarketIcon },
-  { route: '/opening-hours', text: t('navigation.about'), icon: InfoIcon },
+  { route: '/store', text: t('navigation.store'), icon: MarketIcon },
+  { route: '/about', text: t('navigation.about'), icon: InfoIcon },
   { route: '/imprint', text: t('navigation.imprint'), icon: NewspaperIcon },
 ]
 

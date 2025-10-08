@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { NList, NListItem, NThing, NImage } from 'naive-ui'
+import { NImage, NList, NListItem, NThing } from 'naive-ui'
 function getImageSrc(imageName: string) {
   return new URL(`../assets/tcg/${imageName}`, import.meta.url).href
 }
@@ -45,7 +45,7 @@ const items: { tcg?: string; src: string; alt: string }[] = [
       style="justify-content: center; width: 100%; padding: 0"
     >
       <RouterLink
-        :to="{ name: '/events', query: { tcg: item.tcg } }"
+        :to="{ name: '/announcment', query: { tcg: item.tcg } }"
         style="width: 100%; height: 100%; display: flex; justify-content: center"
       >
         <NImage
