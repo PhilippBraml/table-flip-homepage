@@ -1,4 +1,4 @@
-import{b as C,l as r,Q as c,k as o,d as $,y as b,u as s,R as S,c as y,A as E,h as i,F as w}from"./index-CFXqncpQ.js";function z(t){const{textColor1:e,textColor2:l,fontWeightStrong:h,fontSize:g}=t;return{fontSize:g,titleTextColor:e,textColor:l,titleFontWeight:h}}const R={common:C,self:z},T=r("thing",`
+import{b as C,l as r,Q as c,k as o,d as $,y as b,u as s,R as S,c as y,A as E,h as i,F as w}from"./index-BpP40g45.js";function z(t){const{textColor1:e,textColor2:l,fontWeightStrong:h,fontSize:g}=t;return{fontSize:g,titleTextColor:e,textColor:l,titleFontWeight:h}}const R={common:C,self:z},T=r("thing",`
  display: flex;
  transition: color .3s var(--n-bezier);
  font-size: var(--n-font-size);
