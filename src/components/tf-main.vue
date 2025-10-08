@@ -45,7 +45,7 @@ const items: { tcg?: string; src: string; alt: string }[] = [
       style="justify-content: center; width: 100%; padding: 0"
     >
       <RouterLink
-        :to="{ name: '/announcment', query: { tcg: item.tcg } }"
+        :to="{ name: '/calendar', query: { tcg: item.tcg } }"
         style="width: 100%; height: 100%; display: flex; justify-content: center"
       >
         <NImage
