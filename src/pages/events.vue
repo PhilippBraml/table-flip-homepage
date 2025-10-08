@@ -1,86 +1,100 @@
-<script setup lang="ts">
-import { ref, watch } from 'vue'
-import { useRoute } from 'vue-router'
-
-const route = useRoute()
-
-const calendarUrl = ref(
-  'https://calendar.google.com/calendar/embed?src=tableflip.calendar%40gmail.com&ctz=Europe%2FBerlin',
-)
-
-watch(
-  () => route.query.tcg,
-  () => {
-    switchCalendar()
-  },
-  { immediate: true },
-)
-
-function switchCalendar() {
-  switch (route.query.tcg) {
-    case 'onepiece':
-      document.title = 'One Piece TCG Events - Table Flip'
-      calendarUrl.value =
-        'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBerlin&showPrint=0&src=dGFibGVmbGlwLmNhbGVuZGFyQGdtYWlsLmNvbQ&src=MTRhZjBlZDM5YjM0OGIzOWE4OTllYzc1MzA4ZjJhYjFkZTY5NzY0MTFjZWMwZWNjZjgzOTY3MDcxMDYzMDFjMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%23f09300'
-      break
-    case 'pokemon':
-      document.title = 'Pokémon TCG Events - Table Flip'
-      calendarUrl.value =
-        'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBerlin&showPrint=0&src=dGFibGVmbGlwLmNhbGVuZGFyQGdtYWlsLmNvbQ&src=Y2RmZTM0MTM4MjVkOWY3Zjg1MGNkMzhmNDAyNDI4MjhmZDAzNmJhMDU4N2Y1NTJkODM0MzZiYTE4YjQ2MzM2Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%23795548'
-      break
-    case 'gundam':
-      document.title = 'Gundam TCG Events - Table Flip'
-      calendarUrl.value =
-        'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBerlin&showPrint=0&src=dGFibGVmbGlwLmNhbGVuZGFyQGdtYWlsLmNvbQ&src=OTkyNDFlMzM5MWYxNWVlNjdlMTk1ZTcwMDA5YmRhZjNjM2IxMTY4NDM2MjZkNjJhMGJkYTJkM2IzNDFlZTM3ZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%23e67c73'
-      break
-    case 'lorcana':
-      document.title = 'Lorcana TCG Events - Table Flip'
-      calendarUrl.value =
-        'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBerlin&showPrint=0&src=dGFibGVmbGlwLmNhbGVuZGFyQGdtYWlsLmNvbQ&src=Y2M5ODBhZWZiMjMyNjQ1NDIxYjkzYjU5MzdiNTAxZDgwYzExNmYyZjEyNTY3MGY1YmU0MTViNzgwMzhjZWFkYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%23f4511e'
-      break
-    case 'riftbound':
-      document.title = 'Riftbound TCG Events - Table Flip'
-      calendarUrl.value =
-        'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBerlin&showPrint=0&src=dGFibGVmbGlwLmNhbGVuZGFyQGdtYWlsLmNvbQ&src=NWQ2NTliNmE0ODE3NWVkODk1ZmJmNzRiNmY1NmFjNmRkNmJkNTg4ZTJjZmM3YTljNmMzNDgzOTZkZWUyZmI3YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%239e69af'
-      break
-    case 'mtg':
-      document.title = 'Magic The Gathering Events - Table Flip'
-      calendarUrl.value =
-        'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBerlin&showPrint=0&src=dGFibGVmbGlwLmNhbGVuZGFyQGdtYWlsLmNvbQ&src=NWU4MDQyNjVkOTRjNWQxNjY0ZTIzYTFhODJkNmQ0NGVkNmM0YzgwZjVlOWJhY2EwZmUxN2QyOTgzY2RlMWE2NUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%23d81b60'
-      break
-    case 'digimon':
-      document.title = 'Digimon TCG Events - Table Flip'
-      calendarUrl.value =
-        'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBerlin&showPrint=0&src=dGFibGVmbGlwLmNhbGVuZGFyQGdtYWlsLmNvbQ&src=NWFhYzU3OTdkYjQ0ZjE3ZDEzODkyODc5MTcyYjRhYjBiOWEwMWY4NjhlZWZhMjM0NTg5NTU1ZDY3OTAwY2MxNkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%23b39ddb'
-      break
-    case 'ygo':
-      document.title = 'Yu-Gi-Oh! TCG Events - Table Flip'
-      calendarUrl.value =
-        'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBerlin&showPrint=0&src=dGFibGVmbGlwLmNhbGVuZGFyQGdtYWlsLmNvbQ&src=YjViYjcxYTdkYWI2Y2I2MTQ3NTRiZTk0ZGU4NjNjMmI4ZjBkY2JjMzM3MmEzOGFhMTJjNDllMjgxYjA4ZmQyOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%23d50000'
-      break
-    case 'starwars':
-      document.title = 'Star Wars Unlimited TCG Events - Table Flip'
-      calendarUrl.value =
-        'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBerlin&showPrint=0&src=dGFibGVmbGlwLmNhbGVuZGFyQGdtYWlsLmNvbQ&src=ZDJiZmY5MTMxMGQ0Y2EyNmYyMjljYWM2YjA5NmFlYTFjNzRlMTZmYzk1YWYxMDE5NzJmMTJmYmY5MzczMjBmNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%23616161'
-      break
-    default:
-      document.title = 'Events - Table Flip'
-      calendarUrl.value =
-        'https://calendar.google.com/calendar/embed?height=600&wkst=1&ctz=Europe%2FBerlin&showPrint=0&src=dGFibGVmbGlwLmNhbGVuZGFyQGdtYWlsLmNvbQ&src=NWFhYzU3OTdkYjQ0ZjE3ZDEzODkyODc5MTcyYjRhYjBiOWEwMWY4NjhlZWZhMjM0NTg5NTU1ZDY3OTAwY2MxNkBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=OTkyNDFlMzM5MWYxNWVlNjdlMTk1ZTcwMDA5YmRhZjNjM2IxMTY4NDM2MjZkNjJhMGJkYTJkM2IzNDFlZTM3ZEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=Y2M5ODBhZWZiMjMyNjQ1NDIxYjkzYjU5MzdiNTAxZDgwYzExNmYyZjEyNTY3MGY1YmU0MTViNzgwMzhjZWFkYUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NWU4MDQyNjVkOTRjNWQxNjY0ZTIzYTFhODJkNmQ0NGVkNmM0YzgwZjVlOWJhY2EwZmUxN2QyOTgzY2RlMWE2NUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=MTRhZjBlZDM5YjM0OGIzOWE4OTllYzc1MzA4ZjJhYjFkZTY5NzY0MTFjZWMwZWNjZjgzOTY3MDcxMDYzMDFjMUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=Y2RmZTM0MTM4MjVkOWY3Zjg1MGNkMzhmNDAyNDI4MjhmZDAzNmJhMDU4N2Y1NTJkODM0MzZiYTE4YjQ2MzM2Y0Bncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=NWQ2NTliNmE0ODE3NWVkODk1ZmJmNzRiNmY1NmFjNmRkNmJkNTg4ZTJjZmM3YTljNmMzNDgzOTZkZWUyZmI3YUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=ZDJiZmY5MTMxMGQ0Y2EyNmYyMjljYWM2YjA5NmFlYTFjNzRlMTZmYzk1YWYxMDE5NzJmMTJmYmY5MzczMjBmNUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&src=YjViYjcxYTdkYWI2Y2I2MTQ3NTRiZTk0ZGU4NjNjMmI4ZjBkY2JjMzM3MmEzOGFhMTJjNDllMjgxYjA4ZmQyOUBncm91cC5jYWxlbmRhci5nb29nbGUuY29t&color=%23039be5&color=%23b39ddb&color=%23e67c73&color=%23f4511e&color=%23d81b60&color=%23f09300&color=%23795548&color=%239e69af&color=%23616161&color=%23d50000'
-  }
-}
-</script>
-
 <template>
-  <div>
-    <h1 style="text-align: center">Kalender</h1>
-    <iframe
-      :src="calendarUrl"
-      style="border: 0"
-      width="100%"
-      height="600"
-      frameborder="0"
-      scrolling="no"
-    />
+  <!-- Instagram -->
+  <tf-instagram />
+  <!-- Ankündigungen -->
+  <div class="announcements-page">
+    <h1 style="align-self: center">
+      {{ $t('events.title') }}
+    </h1>
+
+    <ul>
+      <n-el
+        v-for="(announcement, index) in announcements"
+        :key="index"
+        tag="li"
+      >
+        <h2>{{ announcement.title }}</h2>
+        <p>{{ $t('events.eventDate', { eventDate: announcement.eventDate }) }}</p>
+        <p v-if="announcement.maxParticipants">
+          {{ $t('events.maxParticipants', { maxParticipantsCount: announcement.maxParticipants }) }}
+        </p>
+        <p>{{ announcement.content }}</p>
+        <small>{{ $t('events.postDate', { postDate: announcement.postDate }) }}</small>
+      </n-el>
+    </ul>
   </div>
 </template>
+
+<script lang="ts" setup>
+import Announcements from '@/assets/announcements.json' with { type: 'json' }
+import tfInstagram from '@/components/tf-instagram.vue'
+import { NEl } from 'naive-ui'
+import { ref } from 'vue'
+
+type Announcement = {
+  title: string
+  content: string
+  eventDate: string
+  postDate: string
+  maxParticipants?: number
+}
+const announcements = ref<Announcement[]>(Announcements.general)
+</script>
+
+<style scoped>
+.announcements-page {
+  display: flex;
+  flex-direction: column;
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+h1 {
+  margin-bottom: 1.5rem;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  background-color: var(--card-color);
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+h2 {
+  margin: 0 0 0.5rem 0;
+}
+p {
+  margin: 0 0 0.5rem 0;
+}
+small {
+  color: #888;
+}
+
+@media (max-width: 600px) {
+  .announcements-page {
+    padding: 0.5rem;
+    margin: 1rem auto;
+    max-width: 100%;
+  }
+  li {
+    padding: 0.75rem;
+    font-size: 1rem;
+  }
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  h2 {
+    font-size: 1.1rem;
+  }
+  p,
+  small {
+    font-size: 0.95rem;
+  }
+}
+</style>

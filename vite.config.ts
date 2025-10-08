@@ -8,7 +8,6 @@ import vueDevTools from 'vite-plugin-vue-devtools'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [VueRouter(), vue(), vueDevTools()],
-  base: '/table-flip-homepage/',
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),

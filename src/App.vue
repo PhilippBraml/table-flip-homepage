@@ -17,8 +17,8 @@ import { darkTheme } from './theme'
             <img
               alt="Table Flip Logo"
               src="@/assets/tablefliplogo.png"
-              width="200"
-              height="200"
+              width="150"
+              height="150"
             />
           </RouterLink>
           <tf-navigation />
