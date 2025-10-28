@@ -28,5 +28,12 @@
   },
   "instagram": {
     "title": "Our News"
+  },
+  "cookies": {
+    "prompt": "To access this content, you need to agree to the use of cookies. Do you want to accept cookies?",
+    "accept": "Accept",
+    "decline": "Decline",
+    "declineText": "You have declined the use of cookies. Some features of this website may not work as intended.",
+    "changeSettings": "Change Cookie Settings"
   }
 }

@@ -23,8 +23,8 @@
           }}
         </p>
         <p
-          v-html="announcement.content"
           style="color: white"
+          v-html="announcement.content"
         ></p>
         <small>{{ $t('announcments.postDate', { postDate: announcement.postDate }) }}</small>
       </n-el>

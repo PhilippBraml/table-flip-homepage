@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import TfCookied from '@/components/tf-cookied.vue'
 import { useTitle } from '@vueuse/core'
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
@@ -73,15 +74,17 @@ function switchCalendar() {
 </script>
 
 <template>
-  <div>
+  <div style="align-items: center; display: flex; flex-direction: column">
     <h1 style="text-align: center">Kalender</h1>
-    <iframe
-      :src="calendarUrl"
-      style="border: 0"
-      width="100%"
-      height="600"
-      frameborder="0"
-      scrolling="no"
-    />
+    <tf-cookied localstorage-key="calendar-cookies">
+      <iframe
+        :src="calendarUrl"
+        style="border: 0"
+        width="100%"
+        height="600"
+        frameborder="0"
+        scrolling="no"
+      />
+    </tf-cookied>
   </div>
 </template>
