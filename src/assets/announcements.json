@@ -1,9 +1,15 @@
 {
   "general": [
     {
+      "title": "New Store Location",
+      "content": "We have moved to a new location! Visit us at <a href=\"https://maps.app.goo.gl/Q1UUdhA2b4hNxwe76\">Bürgermeister-Aurnhammer-Straße 5, 86199 Augsburg</a>.",
+      "eventDate": "2025-10-27",
+      "postDate": "2025-10-28"
+    },
+    {
       "title": "Welcome to Table Flip!",
       "content": "We are excited to launch our new homepage. Stay tuned for updates!",
-      "eventDate": "2024-06-15 00:00:00",
+      "eventDate": "2024-10-15",
       "postDate": "2025-09-01"
     }
   ]
