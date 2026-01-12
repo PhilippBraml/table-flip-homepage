@@ -1,13 +1,13 @@
 <template>
   <n-button-group class="tf-language-switch-buttons">
-    <n-button @click="setLanguage('de')">🇩🇪</n-button>
-    <n-button @click="setLanguage('en')">🇬🇧</n-button>
+    <n-button @click="setLanguage('de')">DE</n-button>
+    <n-button @click="setLanguage('en')">EN</n-button>
   </n-button-group>
 </template>
 <script setup lang="ts">
 import { useLocalStorage } from '@vueuse/core'
+import { NButton, NButtonGroup } from 'naive-ui'
 import { useI18n } from 'vue-i18n'
-import { NButtonGroup, NButton } from 'naive-ui'
 const { locale } = useI18n()
 
 const localStorageLanguage = useLocalStorage('language', locale)
