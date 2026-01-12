@@ -18,8 +18,8 @@ const items: { tcg?: string; src: string; alt: string }[] = [
   { src: 'Flesh_and_Blood_Logo.webp', alt: 'Flesh and Blood' },
   { tcg: 'ygo', src: 'yugioh_tcg.png', alt: 'Yu-Gi-Oh!' },
   { tcg: 'digimon', src: 'digimon_tcg.png', alt: 'Digimon' },
-  { tcg: 'starwars', src: 'Star_Wars_Logo.webp', alt: 'StarWars Unlimited' },
-  { src: 'DungeonsAndDragons_Logo.svg', alt: 'Dungeons and Dragons' },
+  //{ tcg: 'starwars', src: 'Star_Wars_Logo.webp', alt: 'StarWars Unlimited' },
+  //{ src: 'DungeonsAndDragons_Logo.svg', alt: 'Dungeons and Dragons' },
 ]
 </script>
 
