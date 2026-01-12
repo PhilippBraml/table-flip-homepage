@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { NConfigProvider, NLayout, NLayoutContent, NLayoutHeader } from 'naive-ui'
+import tfLanguageSwitch from './components/tf-language-switch.vue'
 import { RouterLink, RouterView } from 'vue-router'
 import TfNavigation from './components/tf-navigation.vue'
 import { darkTheme } from './theme'
@@ -17,11 +18,12 @@ import { darkTheme } from './theme'
             <img
               alt="Table Flip Logo"
               src="@/assets/tablefliplogo.png"
-              width="150"
-              height="150"
+              width="200"
+              height="200"
             />
           </RouterLink>
           <tf-navigation />
+          <tf-language-switch />
         </header>
       </n-layout-header>
       <n-layout-content class="tf-use-full-width">
