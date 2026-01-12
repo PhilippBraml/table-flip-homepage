@@ -29,7 +29,8 @@
       "friday": "Freitag",
       "saturday": "Samstag",
       "sunday": "Sonn- & Feiertage"
-    }
+    },
+    "onlineStore": "Besuche auch unseren Online Shop unter Cardmarket!"
   },
   "about": {
     "title": "Über uns",
@@ -45,5 +46,12 @@
     "maxParticipants": "Maximale Teilnehmerzahl: {maxParticipantCount}",
     "eventDate": "Event Datum: {eventDate}",
     "postDate": "Veröffentlicht am: {postDate}"
+  },
+  "cookies": {
+    "prompt": "Um diesen Inhalt einzusehen, müssen Sie der Verwendung von Cookies zustimmen. Möchten Sie Cookies akzeptieren?",
+    "accept": "Annhemen",
+    "decline": "Ablehnen",
+    "declineText": "Cookies wurden abgelehnt. Einige Funktionen dieser Website könnten dadurch beeinträchtigt werden.",
+    "changeSettings": "Cookie Einstellungen ändern"
   }
 }

@@ -49,7 +49,7 @@ const openingHours = [
           <n-gi>Route planen:</n-gi>
         </n-grid>
         <a
-          href="https://maps.app.goo.gl/E4YfLshch2uRfUmj9"
+          href="https://maps.app.goo.gl/Q1UUdhA2b4hNxwe76"
           target="_blank"
           rel="noopener noreferrer"
         >
@@ -57,8 +57,8 @@ const openingHours = [
             cols="1"
             style="width: fit-content"
           >
-            <n-gi>Rosenaustraße 51</n-gi>
-            <n-gi>86150 Augsburg</n-gi>
+            <n-gi>Bürgermeister-Aurnhammer-Straße 5</n-gi>
+            <n-gi>86199 Augsburg</n-gi>
           </n-grid>
         </a>
         <n-grid
@@ -66,6 +66,34 @@ const openingHours = [
           style="width: fit-content"
         >
           <n-gi><tf-map /></n-gi>
+        </n-grid>
+      </template>
+    </n-thing>
+  </div>
+  <div style="align-self: center">
+    <n-thing>
+      <template #header>
+        <h3 style="white-space: preserve; text-align: center">
+          {{ t('store.onlineStore') }}
+        </h3>
+      </template>
+      <template #default>
+        <n-grid
+          cols="1"
+          style="justify-items: center"
+        >
+          <n-gi style="justify-self: center">
+            <a
+              href="https://www.cardmarket.com/de/YuGiOh/Users/Table-flip"
+              target="_blank"
+            >
+              <img
+                src="https://images.ctfassets.net/pjhgqryi6myh/70VWmBtTX4YsvmjHjpoLAB/8e0ae8f88defbc623ca86139e387be27/CMLogoWhite1_-_VerticalTagline.png"
+                alt="www.cardmarket.com"
+                style="height: 120px"
+              />
+            </a>
+          </n-gi>
         </n-grid>
       </template>
     </n-thing>

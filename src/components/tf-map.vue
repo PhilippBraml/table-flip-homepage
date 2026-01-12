@@ -1,9 +1,9 @@
 <script setup lang="ts">
+import { LMap, LMarker, LTileLayer } from '@vue-leaflet/vue-leaflet'
 import 'leaflet/dist/leaflet.css'
-import { LMap, LTileLayer, LMarker } from '@vue-leaflet/vue-leaflet'
 import { ref } from 'vue'
 
-const tableflip = [48.3656812, 10.8815513] as [number, number]
+const tableflip = [48.3412093, 10.8685846] as [number, number]
 const zoom = ref(20)
 const center = ref(tableflip)
 </script>

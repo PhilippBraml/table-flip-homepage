@@ -22,7 +22,10 @@
             })
           }}
         </p>
-        <p>{{ announcement.content }}</p>
+        <p
+          style="color: white"
+          v-html="announcement.content"
+        ></p>
         <small>{{ $t('announcments.postDate', { postDate: announcement.postDate }) }}</small>
       </n-el>
     </ul>
@@ -32,7 +35,7 @@
 <script lang="ts" setup>
 import Announcements from '@/assets/announcements.json' with { type: 'json' }
 import tfInstagram from '@/components/tf-instagram.vue'
-import { NEl } from 'naive-ui'
+import { NEl, useThemeVars } from 'naive-ui'
 import { ref } from 'vue'
 
 type Announcement = {
@@ -43,9 +46,10 @@ type Announcement = {
   maxParticipants?: number
 }
 const announcements = ref<Announcement[]>(Announcements.general)
+const themeVars = useThemeVars()
 </script>
 
-<style scoped>
+<style>
 .announcements-page {
   display: flex;
   flex-direction: column;
@@ -100,5 +104,8 @@ small {
   small {
     font-size: 0.95rem;
   }
+}
+a {
+  color: v-bind('themeVars.primaryColor');
 }
 </style>
